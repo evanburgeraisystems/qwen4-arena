@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QWEN4-MAX // arena — four builds, one browser</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: #07090c; color: #dfe7ee; min-height: 100vh;
+    font: 15px/1.55 'Courier New', ui-monospace, monospace;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 48px 20px 64px;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(64,140,255,.14), transparent);
+  }
+  h1 { font-size: clamp(28px, 6vw, 52px); letter-spacing: .18em; font-weight: 700; color: #fff;
+       text-shadow: 0 0 24px rgba(90,170,255,.45); }
+  .sub { color: #7d8b99; letter-spacing: .22em; font-size: 12px; margin: 10px 0 40px; text-transform: uppercase; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; width: min(1060px, 100%); }
+  a.card {
+    display: block; text-decoration: none; color: inherit; padding: 22px 22px 18px;
+    background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.12);
+    transition: transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  a.card:hover { transform: translateY(-3px); border-color: rgba(120,190,255,.65); background: rgba(90,170,255,.08); }
+  .tag { font-size: 11px; letter-spacing: .2em; color: #6fb1ff; }
+  .name { font-size: 21px; font-weight: 700; color: #fff; margin: 6px 0 8px; letter-spacing: .06em; }
+  .desc { font-size: 13px; color: #93a1af; }
+  .go { margin-top: 14px; font-size: 12px; letter-spacing: .18em; color: #ffd479; }
+  .films { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .films a { color: #9fd0ff; font-size: 13px; letter-spacing: .08em; text-decoration: none;
+             border: 1px solid rgba(159,208,255,.35); padding: 8px 14px; }
+  .films a:hover { background: rgba(159,208,255,.12); }
+  footer { margin-top: 44px; color: #55636f; font-size: 11px; letter-spacing: .18em; }
+</style>
+</head>
+<body>
+  <h1>QWEN4-MAX</h1>
+  <div class="sub">four builds &middot; zero downloaded assets &middot; one browser</div>
+  <div class="grid">
+    <a class="card" href="test1-minecraft/">
+      <div class="tag">01 / VOXEL GAME</div>
+      <div class="name">VOXELCRAFT</div>
+      <div class="desc">Infinite procedural Minecraft-like: caves, oceans, mountains, day/night with real sunsets, mobs, break/place, synthesized sound. Raw WebGL.</div>
+      <div class="go">PLAY &rarr;</div>
+    </a>
+    <a class="card" href="test2-motiongraphic/film/">
+      <div class="tag">02 / MOTION FILM</div>
+      <div class="name">ASCENT</div>
+      <div class="desc">20-second kinetic brand film with generative score. Live canvas playback, or watch the recorded webm below.</div>
+      <div class="go">RUN FILM &rarr;</div>
+    </a>
+    <a class="card" href="test3-googlemaps/">
+      <div class="tag">03 / PROCEDURAL EARTH</div>
+      <div class="name">TERRA</div>
+      <div class="desc">Google-Earth-like globe: space-to-street zoom, three procedural cities, night lights, auroras, live satellites, cinematic tour.</div>
+      <div class="go">EXPLORE &rarr;</div>
+    </a>
+    <a class="card" href="test4-bodycam/">
+      <div class="tag">04 / HORROR FPS</div>
+      <div class="name">AXON BODY 3</div>
+      <div class="desc">Found-footage bodycam horror: flashlight cone, grain, stamina breath, hitstop, zombies in the dark. Reach the rooftop helipad.</div>
+      <div class="go">DEPLOY &rarr;</div>
+    </a>
+  </div>
+  <div class="films">
+    <a href="test2-motiongraphic/ascent-v2.webm">&#9654; ASCENT v2 (recorded, 20s, sound)</a>
+    <a href="test2-motiongraphic/qwen4-max-ascent.mp4">&#9654; ASCENT v1 (original mp4)</a>
+  </div>
+  <footer>EVERY TEXTURE, SOUND &amp; MESH GENERATED IN CODE &middot; QWEN4-MAX // 2026</footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ASCENT — QWEN4-MAX</title>
+<style>
+  html,body{margin:0;padding:0;background:#000;height:100%;overflow:hidden}
+  body{display:flex;align-items:center;justify-content:center}
+  #stage{display:block;width:min(100vw,calc(100vh*16/9));height:auto;aspect-ratio:16/9;background:#000}
+  #rec{position:fixed;top:12px;right:16px;font:600 12px/1 ui-monospace,Consolas,monospace;
+       letter-spacing:.2em;color:#ff4d5e;display:none;align-items:center;gap:7px;z-index:9;
+       text-shadow:0 0 8px rgba(255,77,94,.6)}
+  #rec i{width:9px;height:9px;border-radius:50%;background:#ff2d40;animation:blink 1s steps(2) infinite}
+  @keyframes blink{50%{opacity:.15}}
+</style>
+</head>
+<body>
+<canvas id="stage" width="1280" height="720"></canvas>
+<div id="rec"><i></i>REC</div>
+<script src="film.js"></script>
+</body>
+</html>

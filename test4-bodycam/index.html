@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BODYCAM: OUTBREAK</title>
+<style>
+  html,body{margin:0;padding:0;background:#000;overflow:hidden;height:100%;font-family:"Courier New",monospace;}
+  #glcanvas{position:fixed;inset:0;display:block;cursor:crosshair;}
+  #hud{position:fixed;inset:0;pointer-events:none;z-index:5;}
+  #overlay{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:rgba(0,0,0,0.82);color:#cfd3cc;text-align:center;cursor:pointer;}
+  #overlay h1{font-size:34px;letter-spacing:6px;margin:0 0 6px;color:#e8e8e2;font-weight:700;}
+  #overlay h2{font-size:13px;letter-spacing:3px;margin:0 0 26px;color:#8a9088;font-weight:400;}
+  #overlay .keys{font-size:12px;line-height:1.9;color:#9aa096;letter-spacing:1px;}
+  #overlay .start{margin-top:26px;font-size:14px;color:#d8dcd4;letter-spacing:2px;animation:blink 1.4s infinite;}
+  #overlay .warn{margin-top:18px;font-size:10px;color:#5c625a;letter-spacing:1px;}
+  #overlay.dead{background:rgba(10,0,0,0.88);}
+  #overlay.dead h1{color:#c8322b;}
+  #overlay.win{background:rgba(0,4,10,0.88);}
+  #overlay.win h1{color:#7fb8d8;}
+  #overlay.hidden{display:none;}
+  #overlay .boot{font-size:12px;line-height:1.8;color:#7fae7a;letter-spacing:1px;text-align:left;
+    width:250px;margin:0 auto 16px;min-height:130px;text-shadow:0 0 6px rgba(90,160,90,0.35);}
+  #overlay .boot .hdr{color:#78806f;font-size:11px;letter-spacing:2px;text-shadow:none;}
+  #overlay .boot .warn{color:#c9a24b;text-shadow:0 0 6px rgba(200,160,70,0.35);}
+  #overlay .boot .live{color:#a4d89e;text-shadow:0 0 8px rgba(120,200,110,0.5);}
+  #overlay .boot div:last-child::after{content:"\2588";margin-left:2px;animation:blink 1s infinite;}
+  #overlay .settings{width:320px;margin:16px auto 0;padding:10px 14px;text-align:left;
+    font-size:11px;letter-spacing:1px;color:#9aa096;border:1px solid #2c322c;background:rgba(8,12,8,0.55);}
+  #overlay .settings .row{display:flex;align-items:center;gap:10px;margin:6px 0;}
+  #overlay .settings label{flex:0 0 96px;}
+  #overlay .settings input[type=range]{flex:1;height:14px;accent-color:#8a9088;cursor:pointer;}
+  #overlay .settings input[type=checkbox]{accent-color:#8a9088;cursor:pointer;}
+  #overlay .settings .val{flex:0 0 44px;text-align:right;color:#cfd3cc;}
+  #overlay .stats{font-size:13px;line-height:2;letter-spacing:2px;color:#cfd3cc;
+    margin:8px 0 4px;min-height:80px;white-space:pre;}
+  #overlay.pause h1{font-size:22px;color:#d8dcd4;}
+  #overlay.menu::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:repeating-linear-gradient(0deg,rgba(0,0,0,0.22) 0px,rgba(0,0,0,0.22) 1px,transparent 1px,transparent 3px);}
+  #overlay.menu::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,0.55) 100%);}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+</style>
+</head>
+<body>
+<canvas id="glcanvas"></canvas>
+<div id="hud"></div>
+<div id="overlay">
+  <h1>BODYCAM: OUTBREAK</h1>
+  <h2>MERCY GENERAL HOSPITAL &mdash; 02:13 AM &mdash; SIGNAL LIVE</h2>
+  <div class="keys">
+    WASD move &nbsp;·&nbsp; SHIFT sprint &nbsp;·&nbsp; MOUSE look<br>
+    LEFT CLICK fire &nbsp;·&nbsp; R reload &nbsp;·&nbsp; F / RIGHT CLICK shove<br>
+    L flashlight &nbsp;·&nbsp; ESC pause<br><br>
+    OBJECTIVE: REACH THE ROOFTOP HELIPAD
+  </div>
+  <div class="start">[ CLICK TO BEGIN — HEADPHONES RECOMMENDED ]</div>
+  <div class="warn">AXON BODY 3 · X60390142 · OFFICER D. REYES · BADGE B-2174</div>
+</div>
+<script src="js/engine.js"></script>
+<script src="js/state.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/level.js"></script>
+<script src="js/zombies.js"></script>
+<script src="js/combat.js"></script>
+<script src="js/postfx.js"></script>
+<script src="js/decals.js"></script>
+<script src="js/director.js"></script>
+<script src="js/perf.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/main.js"></script>
+<script src="js/feel.js"></script>
+</body>
+</html>

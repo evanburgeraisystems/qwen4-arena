@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Voxelcraft — a tiny Minecraft-like in your browser</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<!-- HUD (hotbar, hearts, crosshair, overlays) — built by ui.js -->
+<div id="hud"></div>
+
+<!-- Debug panel (F3) — built by ui.js -->
+<div id="debug"></div>
+
+<!-- Screens — built by ui.js -->
+<div id="start-screen" class="screen"></div>
+<div id="pause-screen" class="screen"></div>
+<div id="death-screen" class="screen"></div>
+
+<div id="boot-error" style="display:none;position:fixed;inset:0;z-index:999;background:#1a1a1a;color:#f66;font:14px monospace;padding:24px;white-space:pre-wrap;"></div>
+
+<script src="js/util.js"></script>
+<script src="js/blocks.js"></script>
+<script src="js/worldgen.js"></script>
+<script src="js/world.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/player.js"></script>
+<script src="js/mobs.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+<script>
+window.addEventListener('error', function (e) {
+  var el = document.getElementById('boot-error');
+  if (el && e && e.message) {
+    el.style.display = 'block';
+    el.textContent += 'ERROR: ' + e.message + '\n' + (e.filename || '') + ':' + (e.lineno || '') + '\n\n';
+  }
+});
+</script>
+</body>
+</html>
